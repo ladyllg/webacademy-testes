@@ -52,10 +52,21 @@ describe('Produto Service', () => {
    * 
    * cadastrar manualmente um produto no banco de dados via interface MySQL
    * ou via API, mas lembrar de alterar o banco de dados para apontar para bd de teste
+   * 
+   */
+
   it('should get specific product', async () => {
-   
+    const res = await request(server.server).get('/v1/produto/5a44bc42-322b-11ee-a8a7-0242ac130002');
+
+    console.log(res.status);
+    console.log(res.body);
+
+    expect(res.body.nome).toEqual("Sabão em pó");
+    expect(res.body.preco).toEqual(5.6);
+    expect(res.body.estoque).toEqual(2);
+
   });
-  */
+  
 
   afterAll(async () => {
     await connection.close();

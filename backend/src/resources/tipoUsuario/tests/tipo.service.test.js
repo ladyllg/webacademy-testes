@@ -8,10 +8,17 @@ describe('tipoUsuario Service', () => {
   });
 
   /**  implementar - 2,5
+   * */
   it('should get all user types', async () => {
-   
+    const res = await request(server.server).get('/v1/tipo-usuario');
+
+    console.log(res.body);
+
+    // Verificando se o tamanho do array retornado está de acordo com a quantidade de tipos existentes
+    expect(res.body.length).toEqual(2);
+
   });
-  */
+  
 
   afterAll(async () => {
     await connection.close();

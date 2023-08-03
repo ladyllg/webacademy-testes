@@ -28,6 +28,21 @@ describe('Usuario Service', () => {
     expect(res.body.tipoUsuarioId).toEqual(TiposUsuarios.ADMIN);
   });
 
+  it('should update an user', async () => {
+
+    const res = await request(server.server)
+      .put('/v1/usuario/320e72e0-18e1-11ee-b9a3-01ecc22810d1')
+      .send({
+        nome: 'usuário atualizado',
+      });
+
+    console.log("Resposta: ", res.body)
+
+    expect(res.body.msg).toEqual("Não autorizado")
+
+  });
+
+
   afterAll(async () => {
     await connection.close();
   });
