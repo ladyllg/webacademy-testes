@@ -7,8 +7,10 @@ describe('tipoUsuario Service', () => {
     await server.bootstrap();
   });
 
-  /**  implementar - 2,5
-   * */
+  /**
+   * Neste bloco, é testado o tamanho da lista de tipoUsuario retornado pelo endpoint
+   * Sabe-se que existem 2 tipos cadastrados no banco, então, esse é o valor esperado 
+   */
   it('should get all user types', async () => {
     const res = await request(server.server).get('/v1/tipo-usuario');
 

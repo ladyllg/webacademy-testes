@@ -28,6 +28,11 @@ describe('Usuario Service', () => {
     expect(res.body.tipoUsuarioId).toEqual(TiposUsuarios.ADMIN);
   });
 
+
+  /**
+   * Nesse teste, é feito alteração no nome de um usuário SEM o autor da requisição estar logado, o que deve retornar 
+   * a mensagem de Não autorizado.
+   */
   it('should update an user', async () => {
 
     const res = await request(server.server)

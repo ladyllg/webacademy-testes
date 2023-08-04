@@ -8,8 +8,11 @@ describe('Auth Service', () => {
     await server.bootstrap();
   });
 
-  /**  implementar - 2,5
-   *  */
+  /**
+   * Aqui iremos criar um novo usuario do tipo cliente, e o retorno esperado é um json com as informações que foram inseridas no banco de dados.
+   * 
+   */
+
   it('should sign up user', async () => {
     const randomEmailNumber = Math.random().toFixed(10); 
 
